@@ -742,6 +742,21 @@ h6 {
   padding: 120px 0;
   text-align: center;
   position: relative;
+
+}
+
+.gambar-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #333;
+}
+
+.gambar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .page-title .round-img {
