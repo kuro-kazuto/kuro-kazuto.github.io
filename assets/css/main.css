@@ -755,15 +755,6 @@ h6 {
         
 }        
 
-.page-title .round-img {
-  width: 150px; /* Tentukan lebar */
-  height: 150px; /* Tentukan tinggi (harus sama dengan lebar) */
-  border-radius: 50%; /* Membuat bentuk lingkaran */
-  border: 5px solid #333; /* Tambahkan border (lebar, gaya, warna) */
-  overflow: hidden; /* Memotong bagian gambar di luar lingkaran */
-  object-fit: cover; /* Memastikan gambar terisi penuh tanpa distorsi */
-}
-
 .page-title h1 {
   font-size: 42px;
   font-weight: 700;
