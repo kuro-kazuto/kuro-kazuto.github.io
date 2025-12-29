@@ -1,1 +1,0 @@
-# kuro-kazuto.github.io

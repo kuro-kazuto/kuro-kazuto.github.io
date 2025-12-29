@@ -1,93 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>My Introduction</title>
-    </head>
-    <body>
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">MODEL</a>
-                </div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lokasi UNTIRTA</title>
+	<link rel = "icon" href = "img/favicon.ico" type = "image/x-icon">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-                <div class="nav__menu" id="nav-menu">
-                    <div class="nav__close">
-                        <ion-icon name="close-outline" class="nav__close-icon" id="nav-close"></ion-icon>
-                    </div>
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Education</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Skill</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Experience</a></li>
-                    </ul>
-                </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                </div>
-            </nav>
-        </header>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="resources/leaflet-ajax/dist/leaflet.ajax.js"></script>
 
-        <main class="l-main bd-grid">
-            <div class="home">
-                <h1 class="home__title">GALIH <br> AJI <br> PAMBUDI</h1>
+</head>
 
-                <div class="home__img">
-                    <!-- Parar ver el efecto de hover effect abra la pagina web en localhost -->
-                </div>
+<body>
+	<div class="container-fluid bg-primary">
+		<div id="header" class="head">
+			<h1 class="text-center" style="color: white;">Lokasi Universitas Sultan Ageng Tirtayasa</h1>
+			
+			
+	
+		</div>
+	</div>
+	
+	
 
-                <div class="home__social">
-                    <a href="#" class="home__social-link">Instagram</a>
-                    <a href="#" class="home__social-link">Facebook</a>
-                    <a href="#" class="home__social-link">Youtube</a>
-                </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div id ="side-panel" class="col-md-2 bg-light">
 
-                <h2 class="home__subtitle">AN<br>ELECTRICAL<br>ENGINEER</h2>
+				<div class="text-center">
+					<h5 style="margin-top: 10px;">LEGENDA</h5>
+					<hr>
+				</div>
 
-                <a href="#" class="home__button">Contact Info <ion-icon name="arrow-forward-outline" class="home__button-icon"></ion-icon></a>
+				<!-- Toggle switch -->
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="pointToggle" value="false">
+					<label class="custom-control-label" for="pointToggle">Lokasi Kampus</label>
+  				</div>
 
-            </div>
-        </main>
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="lineToggle" value="false">
+					<label class="custom-control-label" for="lineToggle">Aliran Sungai</label>
+  				</div>
+				
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="polyToggle" value="false">
+					<label class="custom-control-label" for="polyToggle">Wilayah Desa/Kelurahan</label>
+  				</div>
 
-        <!-- MAIN -->
-        <script src="assets/js/main.js"></script>
+				
+				<hr>
+				<h5 class ="text-center">Zoom To :</h5>
+				
+			
+			</div>
+		
+			<div id="mapdiv" class="col-md-10 bg-success">
+		
+			</div>
+		</div>
 
-        <!-- GSAP -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+	</div>
 
-        <!-- THREE JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
-         integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+	
+	
 
-        <!-- HOVER-EFFECT JS -->
-        <script src="assets/js/hover-effect.umd.js"></script>
-        
-         <!-- ICONOS -->
-        <script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-    
-        <script>
-            new hoverEffect({
-                parent: document.querySelector('.home__img'),
-                intensity: 0.3,
-                image1: 'assets/img/img1.png',
-                image2: 'assets/img/img2.png',
-                displacementImage: 'assets/img/diss.png',
-                imagesRatio: 450 / 300
-            })
+	<div id="footer" class="col-md-12 bg-primary">
+		<h5 id="map_coords" class="text-center" style="color: white;">Latitude: -6.120748 Longitude: 106.194332 Zoom Level: 11</h5>
+		<h5 class="text-center" style="color: white;">&copy;2021
+			<a href="https://untirta.ac.id">UNTIRTA</a>
+		</h5>
+	</div>
+	
 
-            /* NAV, TITLE Y IMG y*/
-            gsap.from('.nav', {opacity: 0, duration: 1, delay:1, y: -30})
-            gsap.from('.home__title', {opacity: 0, duration: 1.2, delay:1.2, y: -30})
-            gsap.from('.home__img', {opacity: 0, duration: 1.3, delay:1.3, y: -50})
+	<script>
 
-            /*SOCIAL, SUBTITLE Y BUTTON*/
-            gsap.from('.home__social', {opacity: 0, duration: 1, delay:1.5, y: 50})
-            gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay: 1.8, y: 50})
-            gsap.from('.home__button', {opacity: 0, duration: 1, delay:2, y: 50})
-        </script>
-    </body>
-</html>
+		//Layer Map
+		var mymap = L.map('mapdiv')
+			mymap.setView([-6.116335534970914, 106.15325263197589], 11);
+
+		var backgroundLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+
+		mymap.addLayer(backgroundLayer);
+
+		
+		
+			
+		$("#zoomTo").on("click", function(){
+			mymap.setView([-6.120748, 106.194332], 20);
+		});
+
+		//POINT Gedung Kampus UNTIRTA
+		var gjLayer = new L.GeoJSON.AJAX('data/kampus.geojson', {
+			pointToLayer: function(feature, latlng) {
+				var obj ="<button id='zoomTo"+feature.properties.nama_objek.replace(/ /g, '');
+					obj += "' class='form-control btn btn-primary'>";
+					obj += feature.properties.nama_objek+"</button>";
+
+					$("#side-panel").append(obj);
+				
+				$("#zoomTo"+feature.properties.nama_objek.replace(/ /g, '')).on("click", function(){
+					mymap.setView([latlng.lat, latlng.lng], 20);
+				});	
+				
+				var obj ="<h5 class='text-center'><b>"+feature.properties.nama_objek+"</b></h5><hr><p><b>Alamat: </b>"+feature.properties.ADR+"</p>";
+					return L.marker(latlng).bindPopup(obj);
+			}
+		});
+
+		//Wilayah Kelurahan/Desa
+		var gjLayer2 = new L.GeoJSON.AJAX('data/desadiserang.geojson', {
+			onEachFeature: function(feature, layer) {
+				layer.bindPopup("<h5 class='text-center'><b>"+feature.properties.NAMOBJ+"</b></h5><hr><p>"+feature.properties.REMARK+"</p>");
+			},
+			style: function(){
+    			return { color: 'black' }
+  			}
+		});
+
+		//Aliran Sungai
+		var gjLayer3 = new L.GeoJSON.AJAX('data/sungai.geojson', {
+			onEachFeature: function(feature, layer) {
+				layer.bindPopup("<h5 class='text-center'><b>"+feature.properties.NAMOBJ+"</b></h5><hr><p>"+feature.properties.REMARK+"</p>");
+			},
+			style: function(){
+    			return { color: 'green' }
+  			}
+		});
+
+		
+		//Fitur gerak mouse menunjuk koordinat
+		mymap.on('mousemove', function(e){
+			var str = "Latitude"+e.latlng.lat.toFixed(6)+" Longitude"+e.latlng.lng.toFixed(6)+" Zoom Level: "+mymap.getZoom();
+			$("#map_coords").html(str);
+		});
+
+		
+		//Bagian Toggle Listener
+		var pointStatus = false;
+		$("#pointToggle").on('change', function() {
+    		if ($(this).is(':checked')) {
+        		pointStatus = $(this).is(':checked');
+        		gjLayer.addTo(mymap);// To verify
+    		}
+    		else {
+				pointStatus = $(this).is(':checked');
+       			gjLayer.removeFrom(mymap);// To verify
+    		}
+		});
+
+		var lineStatus = false;
+		$("#lineToggle").on('change', function() {
+    		if ($(this).is(':checked')) {
+        		lineStatus = $(this).is(':checked');
+        		gjLayer3.addTo(mymap);// To verify
+    		}
+    		else {
+				lineStatus = $(this).is(':checked');
+       			gjLayer3.removeFrom(mymap);// To verify
+    		}
+		});
+
+		var polyStatus = false;
+		$("#polyToggle").on('change', function() {
+    		if ($(this).is(':checked')) {
+        		polyStatus = $(this).is(':checked');
+        		gjLayer2.addTo(mymap);// To verify
+    		}
+    		else {
+				polyStatus = $(this).is(':checked');
+       			gjLayer2.removeFrom(mymap);// To verify
+    		}
+		});
+		
+		
+
+	</script>
+
+</body>
+</html>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
