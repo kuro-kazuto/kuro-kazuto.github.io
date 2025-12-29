@@ -753,6 +753,7 @@ h6 {
   background-position: center; /* Center the image within the container */
   border-radius: 50%; /* Create rounded corners by setting border-radius to 50% */
   overflow: hidden; /* Hide any overflow (e.g., if the image is larger than the container) */
+        
 }        
 
 .page-title .round-img {
