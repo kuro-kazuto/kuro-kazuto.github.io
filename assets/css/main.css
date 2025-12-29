@@ -744,6 +744,15 @@ h6 {
   position: relative;
 }
 
+.page-title .round-img {
+  width: 90px;
+  border-radius: 50%;
+  margin: -40px 0 0 40px;
+  position: relative;
+  z-index: 2;
+  border: 6px solid var(--background-color);
+}
+
 .page-title h1 {
   font-size: 42px;
   font-weight: 700;
