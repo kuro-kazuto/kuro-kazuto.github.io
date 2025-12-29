@@ -746,18 +746,14 @@ h6 {
 }
 
 .round {
-	margin-top:30px;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-	border:2px solid white;
-    }
-.round img {
-    display: block;
-    min-width: 100%;
-    min-height: 100%;
-}
+	width: 200px; /* Set the width of the container */
+  height: 200px; /* Set the height of the container */
+  background-image: url('assets/img/testimonials/testimonials-2.jpg'); /* Replace 'your-image-url.jpg' with your image file path or URL */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image within the container */
+  border-radius: 50%; /* Create rounded corners by setting border-radius to 50% */
+  overflow: hidden; /* Hide any overflow (e.g., if the image is larger than the container) */
+}        
 
 .page-title .round-img {
   width: 150px; /* Tentukan lebar */
