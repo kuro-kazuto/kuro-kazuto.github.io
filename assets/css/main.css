@@ -746,8 +746,7 @@ h6 {
 }
 
 .profile-round {
-  position: center;
-  justify-content: center;
+  
 	width: 400px; /* Set the width of the container */
   height: 400px; /* Set the height of the container */
   background-image: url('assets/img/testimonials/testimonials-2.jpg'); /* Replace 'your-image-url.jpg' with your image file path or URL */
